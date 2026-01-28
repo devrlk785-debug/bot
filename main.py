@@ -263,7 +263,7 @@ async def download_with_quality(query, context, url, quality, title):
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'Accept-Language': 'en-us,en;q=0.5',
     'Sec-Fetch-Mode': 'navigate',
-    'cookiefile': '/home/container/cookies.txt',  # ✅ أضف هذا السطر
+    'cookiefile': '/cookies.txt',  # ✅ أضف هذا السطر
 }  
         if quality == "audio":
             ydl_opts["postprocessors"] = [
@@ -355,7 +355,7 @@ async def download_audio_command(update: Update, context: ContextTypes.DEFAULT_T
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'Accept-Language': 'en-us,en;q=0.5',
     'Sec-Fetch-Mode': 'navigate',
-     'cookiefile': '/home/container/cookies.txt',  # ✅ أضف هذا الس       
+     'cookiefile': '/cookies.txt',  # ✅ أضف هذا الس       
 }
         
 
