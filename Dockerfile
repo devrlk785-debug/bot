@@ -1,17 +1,8 @@
-FROM python:3.11-slim
+[phases.setup]
+nixPkgs = ["python311", "ffmpeg", "ffmpeg-full"]
 
-# تحديث وتثبيت ffmpeg
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    ffmpeg \
-    libavcodec-extra \
-    && rm -rf /var/lib/apt/lists/*
+[phases.install]
+cmds = ["pip install -r requirements.txt"]
 
-WORKDIR /app
-
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
-
-CMD ["python", "bot.py"]
+[start]
+cmd = "python bot.py"
