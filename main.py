@@ -258,13 +258,16 @@ async def download_with_quality(query, context, url, quality, title):
             "retries": 20,
             "fragment_retries": 20,
             "nocheckcertificate": True,
-          'user_agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15',
-    'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    'Accept-Language': 'en-us,en;q=0.5',
-    'Sec-Fetch-Mode': 'navigate',
-    'cookiefile': '/cookies.txt',  # ✅ أضف هذا السطر
-}  
+          'user_agent': 'com.google.ios.youtube/19.09.3 (iPhone14,3; U; CPU iOS 16_0 like Mac OS X)',
+'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+'Accept-Language': 'en-us,en;q=0.5',
+'Sec-Fetch-Mode': 'navigate',
+'extractor_args': {
+    'youtube': {
+        'player_client': ['ios'],
+    }
+},
+}
         if quality == "audio":
             ydl_opts["postprocessors"] = [
                 {
